@@ -56,7 +56,8 @@ public:
   double std_radrd_ ;
 
   ///* Weights of sigma points
-  VectorXd weights_;
+  VectorXd weights_c_;
+  VectorXd weights_m_;
 
   ///* State dimension
   int n_x_;
@@ -67,7 +68,8 @@ public:
   ///* Sigma point spreading parameter
   double lambda_;
 
-
+  MeasurementPackage last_meas_;
+  
   /**
    * Constructor
    */
@@ -102,6 +104,13 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
+  
+private:
+
+  void InitMeasurement(MeasurementPackage meas_package);
+  void NormalizeAngle(double &angle);
+  void GenerateAugmentedSigmaPoints(MatrixXd& Xsig_aug);
+  void PredictSigmaPoints(const MatrixXd& Xsig_aug, double delta_t);
 };
 
 #endif /* UKF_H */
