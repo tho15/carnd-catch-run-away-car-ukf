@@ -9,7 +9,7 @@ This repository contains all the code needed to complete the Bonus Challenge: Ca
 
 ## Project Introduction
 
-In this project, we implements Scaled Sigma Point Algorithm proposed by Rudolph Van der Merwe in his [2004 PhD dissertation](http://digitalcommons.ohsu.edu/cgi/viewcontent.cgi?article=1007&context=etd). The advantage of scaled UKF compared to UKF is it can guarantees positive semidefiniteness of the covariance matrix, thus avoid numerical instability. It is easy to implement as UKF, although it has more parameters to tune.
+In this project, we implement Scaled Sigma Point Algorithm proposed by Rudolph Van der Merwe in his [2004 PhD dissertation](http://digitalcommons.ohsu.edu/cgi/viewcontent.cgi?article=1007&context=etd). The advantage of scaled UKF compared to UKF is it can guarantee positive semidefiniteness of the covariance matrix, thus avoid numerical instability. It is easy to implement as UKF, although it has more parameters to tune.
 
 The Scaled UKF implmentation is used to catch an escaped car driving in a circular path. The run away car will be being sensed by a stationary sensor, that is able to measure both noisy lidar and radar data. The capture vehicle will need to use these measurements to close in on the run away car. To capture the run away car the capture vehicle needs to come within .1 unit distance of its position. However the capture car and the run away car have the same max velocity, so if the capture vehicle wants to catch the car, it will need to predict where the car will be ahead of time.
 
