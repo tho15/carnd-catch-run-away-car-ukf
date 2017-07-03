@@ -5,7 +5,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Overview
 
-This repository contains all the code needed to complete the Bonus Challenge: Cathc the Run Away Car with Unscented Kalman Filter.
+This repository contains all the code needed to complete the Bonus Challenge: Cathc the Run Away Car with Unscented Kalman Filter. The code implements Scaled Sigma Point Algorithm proposed by Rudolph Van der Merwe in his [2004 PhD dissertation](http://digitalcommons.ohsu.edu/cgi/viewcontent.cgi?article=1007&context=etd). The advantage of scaled UKF compared to UKF is it can guarantees positive semidefiniteness of the covariance matrix, thus avoid numerical instability. It is easy to implement as UKF, although it has more parameters to tune.
 
 ## Project Introduction
 
